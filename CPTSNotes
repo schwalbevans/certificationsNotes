@@ -1,1 +1,11 @@
 
+Network Enumeration with NMAP 
+
+-F top 100 ports 
+
+classics 
+-sV services 
+-sU UDP specific 
+-sC Default scripts  
+
+-D Decoy, random IP's within a range that you can specify, can use to look like you are within DMZ or registered to the DNS 
