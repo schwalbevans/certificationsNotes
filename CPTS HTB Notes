@@ -23,3 +23,27 @@ How can we use it?
 What can we not see?
 What reasons can there be that we do not see?
 What image results for us from what we do not see?
+
+There are layers to this enumeration based on the infrastrcuture and should look like this: 
+1. Internet Presence	Identification of internet presence and externally accessible infrastructure.	Domains, Subdomains, vHosts, ASN, Netblocks, IP Addresses, Cloud Instances, Security Measures
+2. Gateway	Identify the possible security measures to protect the company's external and internal infrastructure.	Firewalls, DMZ, IPS/IDS, EDR, Proxies, NAC, Network Segmentation, VPN, Cloudflare
+3. Accessible Services	Identify accessible interfaces and services that are hosted externally or internally.	Service Type, Functionality, Configuration, Port, Version, Interface
+4. Processes	Identify the internal processes, sources, and destinations associated with the services.	PID, Processed Data, Tasks, Source, Destination
+5. Privileges	Identification of the internal permissions and privileges to the accessible services.	Groups, Users, Permissions, Restrictions, Environment
+6. OS Setup	Identification of the internal components and systems setup.	OS Type, Patch Level, Network config, OS Environment, Configuration files, sensitive private files
+
+Domain enumeration: 
+
+Definietly look at the main website to get a feel for how it looks and the information that it provides. 
+Be very careful to keep track of what you are able to find, and also be able to look and figure what are you NOT seeing. 
+
+Check the Certificates to see what subdomains you can find
+Also use shodan to dive deeper into these subdomains 
+
+curl -s https://crt.sh/\?q\=<target-domain>\&output\=json | jq .	Certificate transparency.
+for i in $(cat ip-addresses.txt);do shodan host $i;done	Scan each IP address in a list using Shodan. 
+
+Cloud Resources: 
+
+ One of the easiest and most used is Google search combined with Google Dorks. For example, we can use the Google Dorks inurl: and intext: 
+
