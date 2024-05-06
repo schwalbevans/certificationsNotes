@@ -9,3 +9,17 @@ classics
 -sC Default scripts  
 
 -D Decoy, random IP's within a range that you can specify, can use to look like you are within DMZ or registered to the DNS 
+
+FootPrinting 
+Enumeration should be a full picture, so really dive in. Understand the infrastructure well, services utilized internally, 
+third party vendors and other really important aspects of the company for your penetration test. Real;ly Deep Dive. 
+
+Guiding Questions through the enumeration
+What can we see?
+What reasons can we have for seeing it?
+What image does what we see create for us?
+What do we gain from it?
+How can we use it?
+What can we not see?
+What reasons can there be that we do not see?
+What image results for us from what we do not see?
