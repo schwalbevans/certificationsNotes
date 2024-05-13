@@ -56,3 +56,30 @@ Job posts be telling you hella about the technologies that the company utilizes,
 Sharing projects on Github without hiding secrets can also be a dead giveaway 
 
 FTP 
+
+Vsftpd is the main server used on linux systems
+ftp <FQDN/IP>	Interact with the FTP service on the target.
+nc -nv <FQDN/IP> 21	Interact with the FTP service on the target.
+telnet <FQDN/IP> 21	Interact with the FTP service on the target.
+openssl s_client -connect <FQDN/IP>:21 -starttls ftp	Interact with the FTP service on the target using encrypted connection.
+wget -m --no-passive ftp://anonymous:anonymous@<target>	Download all available files on the target FTP server.
+
+Mostly Run on Port 21 
+
+Get and put are important commands for moving and getting files from the ftp server. 
+
+SMB 
+SMB is a CIFS based file sharing protocols that is used by windows systems to share directories, files, printers and other thigns across a netowrk. 
+Windows specifically will use things like NTLM and Kerberos to authenticate users 
+
+Linux has Samba and Sambaclient to communicate with other servers. 
+
+Some Important commands: 
+smbclient -N -L //<FQDN/IP>	Null session authentication on SMB.
+smbclient //<FQDN/IP>/<share>	Connect to a specific SMB share.
+rpcclient -U "" <FQDN/IP>	Interaction with the target using RPC.
+samrdump.py <FQDN/IP>	Username enumeration using Impacket scripts.
+smbmap -H <FQDN/IP>	Enumerating SMB shares.
+crackmapexec smb <FQDN/IP> --shares -u '' -p ''	Enumerating SMB shares using null session authentication.
+enum4linux-ng.py <FQDN/IP> -A	SMB enumeration using enum4linux.
+
